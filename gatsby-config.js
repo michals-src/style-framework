@@ -12,13 +12,23 @@ module.exports = {
     },
   },
   plugins: [
+  
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/src/my-lib`,
+        name: `my-lib`,
       },
     },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        // cssLoaderOptions:{
+        //   localIdentName: `[path]--[name]--[folder]--[local]-[hash:base64:5]`
+        // }
+      }
+    },
+  /*
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -69,6 +79,7 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
+    */
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

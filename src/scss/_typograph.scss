@@ -1,0 +1,43 @@
+@import 'utilities';
+
+@function prx--font-size-scale( $level, $map ){
+    @if map-has-key($map, $level){
+        @return prx--rem( $font-size-base * map-get( $map, $level) );
+    }
+}
+
+@mixin prx--make-heading( $heading-size, $heading-typescale-map: $heading-typescale ){
+
+    $font-scale: prx--font-size-scale( $heading-size, $heading-typescale-map );
+
+    font-size: $font-scale;
+    margin: 0;
+    font-weight: $font-weight-heading;
+    line-height: $font-line-height-heading;
+}
+
+@mixin prx--make-headgins-finally(){
+    @each $heading-level, $heading-scale in $heading-typescale{
+
+        h#{$heading-level}{
+            @include prx--make-heading( $heading-level, $heading-typescale );
+        }
+
+        .h#{$heading-level}{
+            @extend  h#{$heading-level}
+        }
+    }
+
+    p{
+        margin-top: $font-mt;
+        margin-bottom: $font-mb;
+        line-height: $font-line-height;
+    }
+
+    a{
+        text-decoration: none;
+        color: $cyan-60;
+    }
+}
+
+@include prx--make-headgins-finally();

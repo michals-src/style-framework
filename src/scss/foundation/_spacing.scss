@@ -1,0 +1,34 @@
+//Mapa skalowania defaultowej wartości spacing
+
+$spacing-map: (
+     'spacing-1': .1,
+     'spacing-2': .2,
+     'spacing-3': .3,
+     'spacing-4': .4,
+     'spacing-5': .5,
+     'spacing-6': .6,
+     'spacing-7': .7,
+     'spacing-8': .8,
+     'spacing-9': .9,
+     'spacing-10': 1,
+     'spacing-20': 1.5,
+     'spacing-30': 2,
+     'spacing-40': 2.5,
+     'spacing-50': 3,
+     'spacing-60': 3.5,
+     'spacing-70': 4,
+     'spacing-80': 4.5,
+     'spacing-90': 5,
+     'spacing-100': 10,
+) !default;
+
+$spacing-default: 'spacing-10';
+$spacing-default-value: 16px;
+
+@function spacing( 
+    $spacing: $spacing-default,
+    $value: $spacing-default-value
+){
+    $multiplicator: map-get( $spacing-map, $spacing );
+    @return $value * $multiplicator;
+}

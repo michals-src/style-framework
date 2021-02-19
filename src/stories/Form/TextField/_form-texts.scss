@@ -1,0 +1,19 @@
+.#{$prefix}--form-label{
+    display: block;
+    font-weight: 700;
+    margin-bottom: .45rem;
+    padding-left: 5px;
+    color: $grey-90;
+}
+.#{$prefix}--form-input-pre-line,
+.#{$prefix}--form-input-help-line{
+    font-size: .9rem;
+    color: $grey-70;
+    padding-left: 5px;
+    margin-top: 0;
+    margin-bottom: .55rem;
+}
+
+.#{$prefix}--form-input-help-line{
+    color: $grey-50;
+}

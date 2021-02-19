@@ -1,13 +1,9 @@
 import React from 'react'
 
-import '../scss/global.scss'
+import '../../scss/global.scss'
+import '../../assets/scss/grid/main.scss'
 
-import '../assets/scss/grid/main.scss'
-
-// import Typograph from '../elementy/typograph'
-// import Buttons from '../elementy/buttons'
-
-export default function App() {
+export default function Colors() {
 
     const $colors = [
         'blue',
@@ -48,9 +44,7 @@ export default function App() {
                 )
             })}
 
-            {/* <Typograph />
-            <Buttons /> */}
-            </div>
+          </div>
         </>
     )
 }
