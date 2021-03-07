@@ -32,4 +32,28 @@ module.exports = {
 
     return config;
   },
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'style!css',
+        include: path.resolve(__dirname, '../'),
+      },
+      {
+        test: /\.yml$/,
+        loader: 'json!yaml',
+        include: path.resolve(__dirname, '../data'),
+      },
+      {
+        test: /\.s[ac]ss$/,
+        loader: 'style!css!sass?includePaths[]=./node_modules',
+        include: path.resolve(__dirname, '../src'),
+      },
+      {
+        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+        loader: 'file',
+        include: path.resolve(__dirname, '../'),
+      },
+    ],
+  },
 };
