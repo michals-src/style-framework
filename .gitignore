@@ -72,4 +72,4 @@ yarn-error.log
 css
 
 # Middleware
-src/assets
+src/assets/*
